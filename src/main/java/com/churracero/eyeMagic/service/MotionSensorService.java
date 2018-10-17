@@ -31,7 +31,6 @@ public class MotionSensorService extends Thread{
    		private String[] commandExec = new String[5];
    		private Integer milisec      = props.getCaptSec()*1000;
    		
-		@Override
 		public void handleGpioPinDigitalStateChangeEvent(GpioPinDigitalStateChangeEvent event) {
 			logger.info("-->GPIO PIN STATE CHANGE:" + event.getPin() + " = " + event.getState());
 			try{
