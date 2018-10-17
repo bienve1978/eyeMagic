@@ -5,6 +5,7 @@ Simple server that has as finalize activate the sensor of movement of the raspbe
 ## Compile
 
 * mvn clean package -DskipTests 
+
 generate deb package to install in the raspberry in the target folder with the name eyeMagic_1.0.0_armhf.deb
 
 ## Configuration
