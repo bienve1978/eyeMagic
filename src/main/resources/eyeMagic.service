@@ -1,0 +1,14 @@
+[Unit]
+Description=eyeMagic Server
+After=network.target
+
+[Service]
+Type=forking
+PIDFile=/run/eyeMagic.pid
+ExecStart=java -jar /opt/eyeMagic/bin/eyeMagic-1.0.0-jar-with-dependencies.jar 
+ExecReload=/bin/kill -s HUP $MAINPID
+ExecStop=/bin/kill -s QUIT $MAINPID
+PrivateTmp=true
+
+[Install]
+WantedBy=multi-user.target
