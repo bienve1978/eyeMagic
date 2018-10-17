@@ -18,4 +18,4 @@ Example:
 * emails=example1@example.com;example2@example.com
 
 ## Start Service
-* service eyeiMagic start 
+* service eyeMagic start 
