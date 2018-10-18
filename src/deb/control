@@ -3,6 +3,6 @@ Version: 1.0-1
 Section: base
 Priority: optional
 Architecture: armhf
-Depends: wiringpi libraspberrypi-bin default-jre 
+Depends: wiringpi,libraspberrypi-bin,default-jre 
 Maintainer: Raul Sanchez <bienve1978@gmail.com>
 Description: EyeMagic control security
