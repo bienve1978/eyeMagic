@@ -1,8 +1,10 @@
 Package: eyeMagic
-Version: 1.0-1
-Section: base
+Version: 1.0.0-1
+Section: extra
 Priority: optional
 Architecture: armhf
+Pre-Depends: dpkg
 Depends: wiringpi,libraspberrypi-bin,default-jre 
 Maintainer: Raul Sanchez <bienve1978@gmail.com>
+Homepage: https://github.com/bienve1978/eyeMagic 
 Description: EyeMagic control security

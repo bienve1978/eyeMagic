@@ -4,11 +4,9 @@ After=network.target
 
 [Service]
 Type=forking
-PIDFile=/run/eyeMagic.pid
-ExecStart=java -jar /opt/eyeMagic/bin/eyeMagic-1.0.0-jar-with-dependencies.jar 
-ExecReload=/bin/kill -s HUP $MAINPID
-ExecStop=/bin/kill -s QUIT $MAINPID
-PrivateTmp=true
+ExecStart
+ExecStart=/usr/bin/java -jar /opt/eyeMagic/bin/eyeMagic-1.0.0-jar-with-dependencies.jar 
+User=root
 
 [Install]
 WantedBy=multi-user.target

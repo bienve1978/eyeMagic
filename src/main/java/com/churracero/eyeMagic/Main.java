@@ -19,6 +19,7 @@ import java.net.URI;
 public class Main {
 	// Private 
 	private final static Logger logger = Logger.getLogger(Main.class);
+	private static HttpServer server;
 	
 	/**
 	 * Starts Grizzly HTTP server exposing JAX-RS resources defined in this
@@ -48,13 +49,21 @@ public class Main {
 	 */
 	public static void main(String[] args) throws IOException {
 		try {
+			if(args.length == 0 || (args.length == 1 && args[1].equals("start")))	
+			{
+				EyeMagicPropService eyeMagicPropSevice = new EyeMagicPropService();
+				EyeMagicProp prop = eyeMagicPropSevice.load();
+				logger.info(prop);
 			
-			EyeMagicPropService eyeMagicPropSevice = new EyeMagicPropService();
-			EyeMagicProp prop = eyeMagicPropSevice.load();
-			logger.info(prop);
-			
-			startServer(prop.getUri());
-			System.in.read();
+				server = startServer(prop.getUri());
+				server.start();
+			}else if(args.length == 1 && args[1].equals("stop"))
+			{
+				server.shutdownNow();
+			}else if(args.length == 1)
+			{
+				logger.error("Unrecognized Command "+args[1]);
+			}
 		} catch (Exception e) {
 			logger.error(e.getMessage());
 		}

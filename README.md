@@ -9,11 +9,10 @@ Simple server that has as finalize activate the sensor of movement of the raspbe
 generate deb package to install in the raspberry in the target folder with the name eyeMagic_1.0.0_armhf.deb
 
 ## Configuration
-There is a configuration file /opt/eyeMagic/eyeMagic.properties
+There is a configuration file /opt/eyeMagic/conf/eyeMagic.properties
 Example: 
 * port=8080
-* logfile=/home/pi/eyeMagic/eyeMagic.log
-* captDir=/home/pi/eyemagic
+* captDir=/home/pi/eyeMagic
 * captSec=10
 * emails=example1@example.com;example2@example.com
 

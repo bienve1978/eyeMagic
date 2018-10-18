@@ -17,7 +17,7 @@ import com.churracero.eyeMagic.model.EyeMagicProp;
 public class EyeMagicPropService {
 
 	private final static Logger logger = Logger.getLogger(EyeMagicPropService.class);
-	private static final String FILE_NAME_PROPS = "/opt/eyeMagic/eyeMagic.properties";
+	private static final String FILE_NAME_PROPS = "/opt/eyeMagic/etc/eyeMagic.properties";
 	private static final EyeMagicProp eyeMagicProp = new EyeMagicProp(); 
 
 	public EyeMagicProp load() throws Exception {
@@ -55,13 +55,6 @@ public class EyeMagicPropService {
 				throw new Exception("No found port in "+FILE_NAME_PROPS);
 			else 
 				eyeMagicProp.setPort(port);
-			
-			// LOG FILE
-			String logFile = prop.getProperty("logfile");
-			if (logFile == null || logFile.isEmpty())
-				throw new Exception("No found log file in  "+FILE_NAME_PROPS);
-			else 
-				eyeMagicProp.setLogFile(logFile);
 			
 			// URI
 			String uri = String.format("http://localhost:%s/", prop.getProperty("port"));

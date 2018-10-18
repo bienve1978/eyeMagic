@@ -10,7 +10,6 @@ public class EyeMagicProp implements Serializable{
 	private static final long serialVersionUID = 1L;
 	private String uri;
 	private String port;
-	private String logFile;
 	private List<InternetAddress> emails;
 	private String captDir;
 	private Integer captSec;
@@ -20,12 +19,6 @@ public class EyeMagicProp implements Serializable{
 	}
 	public void setPort(String port) {
 		this.port = port;
-	}
-	public String getLogFile() {
-		return logFile;
-	}
-	public void setLogFile(String logFile) {
-		this.logFile = logFile;
 	}
 	public List<InternetAddress> getEmails() {
 		return emails;
@@ -53,7 +46,7 @@ public class EyeMagicProp implements Serializable{
 	}
 	@Override
 	public String toString() {
-		return "EyeMagicProp [uri=" + uri + ", port=" + port + ", logFile=" + logFile + ", emails=" + emails
-				+ ", captDir=" + captDir + ", captSec=" + captSec + "]";
+		return "EyeMagicProp [uri=" + uri + ", port=" + port + ", emails=" + emails + ", captDir=" + captDir
+				+ ", captSec=" + captSec + "]";
 	}
 }
