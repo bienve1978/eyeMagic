@@ -17,7 +17,7 @@ import com.churracero.eyeMagic.model.EyeMagicProp;
 public class EyeMagicPropService {
 
 	private final static Logger logger = Logger.getLogger(EyeMagicPropService.class);
-	private static final String FILE_NAME_PROPS = "/home/raul/eyeMagic/eyeMagic.properties";
+	private static final String FILE_NAME_PROPS = "/opt/eyeMagic/eyeMagic.properties";
 	private static final EyeMagicProp eyeMagicProp = new EyeMagicProp(); 
 
 	public EyeMagicProp load() throws Exception {
