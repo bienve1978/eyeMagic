@@ -48,16 +48,23 @@ public class EyeMagicPropService {
 				}
 				eyeMagicProp.setEmails(emails);
 			}
-						
-			// PORT 
+			
+			// PORT
+			String host = prop.getProperty("host");
+			if (host == null || host.isEmpty())
+				throw new Exception("No found host in " + FILE_NAME_PROPS);
+			else
+				eyeMagicProp.setHost(host);
+
+			// PORT
 			String port = prop.getProperty("port");
-			if(port == null || port.isEmpty())
-				throw new Exception("No found port in "+FILE_NAME_PROPS);
-			else 
+			if (port == null || port.isEmpty())
+				throw new Exception("No found port in " + FILE_NAME_PROPS);
+			else
 				eyeMagicProp.setPort(port);
 			
 			// URI
-			String uri = String.format("http://localhost:%s/", prop.getProperty("port"));
+			String uri = String.format("http://%s:%s/", eyeMagicProp.getHost(), eyeMagicProp.getPort());
 			eyeMagicProp.setUri(uri);
 			
 			// CAPTDIR

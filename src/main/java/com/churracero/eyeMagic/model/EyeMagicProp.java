@@ -8,12 +8,19 @@ import javax.mail.internet.InternetAddress;
 public class EyeMagicProp implements Serializable{
 
 	private static final long serialVersionUID = 1L;
+	private String host;
 	private String uri;
 	private String port;
 	private List<InternetAddress> emails;
 	private String captDir;
 	private Integer captSec;
 	
+	public String getHost() {
+		return host;
+	}
+	public void setHost(String host) {
+		this.host = host;
+	}
 	public String getPort() {
 		return port;
 	}
@@ -46,7 +53,7 @@ public class EyeMagicProp implements Serializable{
 	}
 	@Override
 	public String toString() {
-		return "EyeMagicProp [uri=" + uri + ", port=" + port + ", emails=" + emails + ", captDir=" + captDir
-				+ ", captSec=" + captSec + "]";
+		return "EyeMagicProp [Host=" + host + ", uri=" + uri + ", port=" + port + ", emails=" + emails + ", captDir="
+				+ captDir + ", captSec=" + captSec + "]";
 	}
 }

@@ -12,7 +12,7 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
-import com.churracero.eyeMagic.Main;
+import com.churracero.eyeMagic.EyeMagic;
 import com.churracero.eyeMagic.model.EyeMagicConf;
 import com.churracero.eyeMagic.model.EyeMagicProp;
 
@@ -30,7 +30,7 @@ public class EyeMagicServiceTest {
 		props = eyeMagicPropSevice.load();
 			
         // start the server
-        Main.startServer(props.getUri());
+        EyeMagic.startServer(props.getUri());
     }
       
     @Test

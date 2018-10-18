@@ -69,7 +69,7 @@
 						<configuration>
 							<archive>
 								<manifest>
-									<mainClass>com.churracero.eyeMagic.Main</mainClass>
+									<mainClass>com.churracero.eyeMagic.EyeMagic</mainClass>
 								</manifest>
 							</archive>
 							<descriptorRefs>
