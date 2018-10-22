@@ -3,6 +3,9 @@ package com.churracero.eyeMagic.service;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.InputStream;
+import java.nio.file.FileSystems;
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
@@ -49,7 +52,7 @@ public class EyeMagicPropService {
 				eyeMagicProp.setEmails(emails);
 			}
 			
-			// PORT
+			// HOST
 			String host = prop.getProperty("host");
 			if (host == null || host.isEmpty())
 				throw new Exception("No found host in " + FILE_NAME_PROPS);
@@ -71,21 +74,29 @@ public class EyeMagicPropService {
 			String captDir = prop.getProperty("captDir");
 			if(captDir == null || captDir.isEmpty())
 				throw new Exception("No found capture directory in "+FILE_NAME_PROPS);
-			else 	
-				eyeMagicProp.setCaptDir(captDir);
+			else
+			{
+				Path captPath = FileSystems.getDefault().getPath(captDir);
+				if(!Files.exists(captPath))
+					throw new Exception("Directory Path "+captPath.toString()+" not exists");
+				else			
+					eyeMagicProp.setCaptDir(captDir);
+			}
 			
 			// CAPTSEC
 			String captSec = prop.getProperty("captSec");
 			if(captSec == null || captSec.isEmpty())
 				throw new Exception("No found captude seconds in "+FILE_NAME_PROPS);
-			else 
-				eyeMagicProp.setCaptSec(Integer.parseInt(captSec));
+			else{
+				int sec = Integer.parseInt(captSec);
+				eyeMagicProp.setCaptSec(sec);
+			}
 			
 			return eyeMagicProp;
 		} catch (FileNotFoundException e) {
 			throw new Exception("No existe el fichero " + FILE_NAME_PROPS);
 		} catch (NumberFormatException e){
-			throw new Exception("Clave captsec no es un entero !!!");
+			throw new Exception("Clave captsec(captura en segundos) no es un entero");
 		}
 	}
 }

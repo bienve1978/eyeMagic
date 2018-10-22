@@ -12,7 +12,7 @@ public class EyeMagicProp implements Serializable{
 	private String uri;
 	private String port;
 	private List<InternetAddress> emails;
-	private String captDir;
+	private String captPath;
 	private Integer captSec;
 	
 	public String getHost() {
@@ -39,11 +39,11 @@ public class EyeMagicProp implements Serializable{
 	public void setUri(String uri) {
 		this.uri = uri;
 	}
-	public String getCaptDir() {
-		return captDir;
+	public String getCaptPath() {
+		return captPath;
 	}
-	public void setCaptDir(String captDir) {
-		this.captDir = captDir;
+	public void setCaptDir(String captPath) {
+		this.captPath = captPath;
 	}
 	public Integer getCaptSec() {
 		return captSec;
@@ -53,7 +53,7 @@ public class EyeMagicProp implements Serializable{
 	}
 	@Override
 	public String toString() {
-		return "EyeMagicProp [Host=" + host + ", uri=" + uri + ", port=" + port + ", emails=" + emails + ", captDir="
-				+ captDir + ", captSec=" + captSec + "]";
+		return "EyeMagicProp [Host=" + host + ", uri=" + uri + ", port=" + port + ", emails=" + emails + ", captPath="
+				+ captPath + ", captSec=" + captSec + "]";
 	}
 }

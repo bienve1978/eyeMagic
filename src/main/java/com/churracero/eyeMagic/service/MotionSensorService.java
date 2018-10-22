@@ -35,9 +35,9 @@ public class MotionSensorService extends Thread{
 			logger.info("-->GPIO PIN STATE CHANGE:" + event.getPin() + " = " + event.getState());
 			try{
 				Date date = new Date();
-				String fileNameCapt = String.format("%s/eyeMotion.h624.%s",props.getCaptDir(),date.toString());
+				String fileNameCapt = String.format("%s/eyeMotion.h624.%s",props.getCaptPath().toString(),date.toString());
 				Path fileCaptPath = FileSystems.getDefault().getPath(fileNameCapt);
-				commandExec[0] = "raspvid";
+				commandExec[0] = "/usr/bin/raspvid";
 				commandExec[1] = "-o";
 				commandExec[2] = fileNameCapt;
 				commandExec[3] = "-t";
